@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		F4A96F622B068EDD00F9F8E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A96F602B068EDD00F9F8E8 /* Main.storyboard */; };
 		F4A96F642B068EDF00F9F8E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4A96F632B068EDF00F9F8E8 /* Assets.xcassets */; };
 		F4A96F672B068EDF00F9F8E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A96F652B068EDF00F9F8E8 /* LaunchScreen.storyboard */; };
+		F4A96F782B06B30300F9F8E8 /* adadapted-swift-sdk in Frameworks */ = {isa = PBXBuildFile; productRef = F4A96F772B06B30300F9F8E8 /* adadapted-swift-sdk */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4A96F782B06B30300F9F8E8 /* adadapted-swift-sdk in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = SwiftAdapted;
+			packageProductDependencies = (
+				F4A96F772B06B30300F9F8E8 /* adadapted-swift-sdk */,
+			);
 			productName = SwiftAdapted;
 			productReference = F4A96F572B068EDD00F9F8E8 /* SwiftAdapted.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = F4A96F4E2B068EDD00F9F8E8;
+			packageReferences = (
+				F4A96F702B06AC8900F9F8E8 /* XCLocalSwiftPackageReference "../../adadapted-swift-sdk" */,
+			);
 			productRefGroup = F4A96F582B068EDD00F9F8E8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -363,6 +371,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		F4A96F702B06AC8900F9F8E8 /* XCLocalSwiftPackageReference "../../adadapted-swift-sdk" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../adadapted-swift-sdk";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F4A96F772B06B30300F9F8E8 /* adadapted-swift-sdk */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "adadapted-swift-sdk";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F4A96F4F2B068EDD00F9F8E8 /* Project object */;
 }
