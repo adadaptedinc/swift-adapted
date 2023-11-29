@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4A967802B16860900E80835 /* aa-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F4A9677F2B16860900E80835 /* aa-logo.png */; };
 		F4A96F5B2B068EDD00F9F8E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A96F5A2B068EDD00F9F8E8 /* AppDelegate.swift */; };
 		F4A96F5D2B068EDD00F9F8E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A96F5C2B068EDD00F9F8E8 /* SceneDelegate.swift */; };
 		F4A96F5F2B068EDD00F9F8E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A96F5E2B068EDD00F9F8E8 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F4A9677F2B16860900E80835 /* aa-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aa-logo.png"; sourceTree = "<group>"; };
 		F4A96F572B068EDD00F9F8E8 /* SwiftAdapted.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftAdapted.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A96F5A2B068EDD00F9F8E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4A96F5C2B068EDD00F9F8E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				F4A96F5E2B068EDD00F9F8E8 /* ViewController.swift */,
 				F4A96F602B068EDD00F9F8E8 /* Main.storyboard */,
 				F4A96F632B068EDF00F9F8E8 /* Assets.xcassets */,
+				F4A9677F2B16860900E80835 /* aa-logo.png */,
 				F4A96F652B068EDF00F9F8E8 /* LaunchScreen.storyboard */,
 				F4A96F682B068EDF00F9F8E8 /* Info.plist */,
 			);
@@ -135,6 +138,7 @@
 			files = (
 				F4A96F672B068EDF00F9F8E8 /* LaunchScreen.storyboard in Resources */,
 				F4A96F642B068EDF00F9F8E8 /* Assets.xcassets in Resources */,
+				F4A967802B16860900E80835 /* aa-logo.png in Resources */,
 				F4A96F622B068EDD00F9F8E8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
