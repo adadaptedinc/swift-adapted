@@ -8,7 +8,7 @@
 import UIKit
 import adadapted_swift_sdk
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, AaSdkSessionListener, AaSdkEventListener, AaSdkAdditContentListener {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         

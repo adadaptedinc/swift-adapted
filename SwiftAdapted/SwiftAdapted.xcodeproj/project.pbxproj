@@ -15,6 +15,8 @@
 		F4A96F642B068EDF00F9F8E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4A96F632B068EDF00F9F8E8 /* Assets.xcassets */; };
 		F4A96F672B068EDF00F9F8E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A96F652B068EDF00F9F8E8 /* LaunchScreen.storyboard */; };
 		F4A96F782B06B30300F9F8E8 /* adadapted-swift-sdk in Frameworks */ = {isa = PBXBuildFile; productRef = F4A96F772B06B30300F9F8E8 /* adadapted-swift-sdk */; };
+		F4AAFE2C2B1F80FC00A9E8FC /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AAFE2B2B1F80FC00A9E8FC /* SearchTextField.swift */; };
+		F4AAFE2E2B1F96E900A9E8FC /* DefaultListItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4AAFE2D2B1F96E900A9E8FC /* DefaultListItems.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		F4A96F632B068EDF00F9F8E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4A96F662B068EDF00F9F8E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4A96F682B068EDF00F9F8E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4AAFE2B2B1F80FC00A9E8FC /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
+		F4AAFE2D2B1F96E900A9E8FC /* DefaultListItems.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DefaultListItems.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				F4A96F5A2B068EDD00F9F8E8 /* AppDelegate.swift */,
+				F4AAFE2B2B1F80FC00A9E8FC /* SearchTextField.swift */,
 				F4A96F5C2B068EDD00F9F8E8 /* SceneDelegate.swift */,
 				F4A96F5E2B068EDD00F9F8E8 /* ViewController.swift */,
 				F4A96F602B068EDD00F9F8E8 /* Main.storyboard */,
@@ -68,6 +73,7 @@
 				F4A9677F2B16860900E80835 /* aa-logo.png */,
 				F4A96F652B068EDF00F9F8E8 /* LaunchScreen.storyboard */,
 				F4A96F682B068EDF00F9F8E8 /* Info.plist */,
+				F4AAFE2D2B1F96E900A9E8FC /* DefaultListItems.plist */,
 			);
 			path = SwiftAdapted;
 			sourceTree = "<group>";
@@ -137,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4A96F672B068EDF00F9F8E8 /* LaunchScreen.storyboard in Resources */,
+				F4AAFE2E2B1F96E900A9E8FC /* DefaultListItems.plist in Resources */,
 				F4A96F642B068EDF00F9F8E8 /* Assets.xcassets in Resources */,
 				F4A967802B16860900E80835 /* aa-logo.png in Resources */,
 				F4A96F622B068EDD00F9F8E8 /* Main.storyboard in Resources */,
@@ -153,6 +160,7 @@
 				F4A96F5F2B068EDD00F9F8E8 /* ViewController.swift in Sources */,
 				F4A96F5B2B068EDD00F9F8E8 /* AppDelegate.swift in Sources */,
 				F4A96F5D2B068EDD00F9F8E8 /* SceneDelegate.swift in Sources */,
+				F4AAFE2C2B1F80FC00A9E8FC /* SearchTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
