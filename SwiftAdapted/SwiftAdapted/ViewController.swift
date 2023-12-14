@@ -21,6 +21,10 @@ class ViewController:
     @IBOutlet weak var addItemButton: UIButton!
     @IBOutlet weak var listTableView: UITableView!
     
+    @IBAction func editingChanged(_ sender: Any) {
+        searchTextField.filterStrings(getListItems())
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchTextField.delegate = self
@@ -32,8 +36,8 @@ class ViewController:
         
         listData = ["Eggs", "Bread"]
         searchTextField.font = UIFont.systemFont(ofSize: 15)
-        //searchTextField.minCharactersNumberToStartFiltering = 3
-        //searchTextField.filterStrings(getListItems())
+        searchTextField.minCharactersNumberToStartFiltering = 3
+        searchTextField.filterStrings(getListItems())
     }
     
     var listData = [String]()
@@ -59,9 +63,6 @@ class ViewController:
         addItem(addItemButton)
     }
     
-    @IBAction func textFieldChanged(_ sender: UITextField) {
-        searchTextField.filterStrings(getListItems())
-    }
     @IBAction func addItem(_ sender: UIButton) {
         if searchTextField.text != nil && !searchTextField.text!.isEmpty {
             //RECIPE test call to get recipe ads
@@ -99,17 +100,19 @@ class ViewController:
         
     }
     
-    private func getListItems(suggestion: String = String()) -> [String] {
-        guard let path = Bundle.main.url(forResource: "DefaultListItems", withExtension: "plist") else {return []}
-        let data = try! Data(contentsOf: path)
-        
-        guard var plist = try! PropertyListSerialization.propertyList(from: data, options: .mutableContainers, format: nil) as? [String] else {return []}
-        
-        if !suggestion.isEmpty {
-            plist.append(suggestion)
+    func getListItems() -> [String] {
+        if let plistPath = Bundle.main.path(forResource: "DefaultListItems", ofType: "plist"),
+           let plistData = FileManager.default.contents(atPath: plistPath) {
+            do {
+                let plistObject = try PropertyListSerialization.propertyList(from: plistData, options: [], format: nil)
+                if let stringArray = plistObject as? [String] {
+                    return stringArray
+                }
+            } catch {
+                print("Error: Unable to deserialize plist data - \(error)")
+            }
         }
-        
-        return plist
+        return []
     }
     
     private func appendListItem(itemName: String = "") {
@@ -117,5 +120,4 @@ class ViewController:
         listTableView.reloadData()
         searchTextField.text = ""
     }
-    
 }

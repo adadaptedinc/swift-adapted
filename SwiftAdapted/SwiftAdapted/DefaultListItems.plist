@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>Item 3</key>
-	<string>Bread</string>
-	<key>Item 2</key>
+<array>
+	<string>Yogurt</string>
 	<string>Eggs</string>
-	<key>Item 1</key>
-	<string>Cheese</string>
-	<key>Item 0</key>
 	<string>Milk</string>
-</dict>
+	<string>Cheese</string>
+	<string>Bread</string>
+</array>
 </plist>

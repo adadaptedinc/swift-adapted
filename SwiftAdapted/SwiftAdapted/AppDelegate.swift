@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AaSdkSessionListener, AaS
         AdAdapted
             .withAppId(key: "7D58810X6333241C")
             .inEnv(env: AdAdapted.Env.DEV)
+            .enableKeywordIntercept(value: true)
             .setSdkSessionListener(listener: self)
             .setSdkEventListener(listener: self)
             .setSdkAdditContentListener(listener: self)

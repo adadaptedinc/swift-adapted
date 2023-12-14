@@ -65,7 +65,7 @@ import adadapted_swift_sdk
     }
     
     /// Set an array of strings to be used for suggestions
-    @objc open func filterStrings(_ strings: [String]) {
+    open func filterStrings(_ strings: [String]) {
         var items = [SearchTextFieldItem]()
         
         for value in strings {
@@ -491,17 +491,19 @@ import adadapted_swift_sdk
     }
     
     fileprivate func getInterceptSuggestions(suggestion: String) {
-//        let results = AASDK.keywordIntercept(for: suggestion) as NSDictionary?
-//        print("Keyword intercept suggestion available")
-//        if results != nil {
-//            let suggestionName = results![AASDK.KEY_KI_REPLACEMENT_TEXT] as? String
-//            let interceptItem = SearchTextFieldItem(title: suggestionName!)
-//            interceptItem.attributedTitle = NSMutableAttributedString(string: suggestionName!)
-//            interceptItem.attributedTitle!.setAttributes(highlightAttributes, range: (interceptItem.title as NSString).range(of: suggestionName!, options: comparisonOptions))
-//            interceptItem.isSponsored = true
-//            filteredResults.append(interceptItem)
-//            AASDK.keywordInterceptPresented()
-//        }
+        let results = KeywordInterceptMatcher.instance.match(constraint: suggestion)
+        print("Keyword intercept suggestion available")
+        if !results.isEmpty {
+            for var suggestion in results {
+                let suggestionName = suggestion.name
+                let interceptItem = SearchTextFieldItem(title: suggestionName)
+                interceptItem.attributedTitle = NSMutableAttributedString(string: suggestionName)
+                interceptItem.attributedTitle!.setAttributes(highlightAttributes, range: (interceptItem.title as NSString).range(of: suggestionName, options: comparisonOptions))
+                interceptItem.isSponsored = true
+                filteredResults.append(interceptItem)
+                suggestion.wasPresented()
+            }
+        }
     }
     
     // Clean filtered results
@@ -614,7 +616,7 @@ extension SearchTextField: UITableViewDelegate, UITableViewDataSource {
         if itemSelectionHandler == nil {
             let selectedItem = filteredResults[(indexPath as NSIndexPath).row]
             if selectedItem.isSponsored {
-                //AASDK.keywordInterceptSelected()
+                KeywordInterceptMatcher.instance.suggestionWasSelected(suggestionName: selectedItem.title)
             }
             self.text = selectedItem.title
         } else {
