@@ -7,6 +7,7 @@
 
 import UIKit
 import adadapted_swift_sdk
+import AppTrackingTransparency
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, AaSdkSessionListener, AaSdkEventListener, AaSdkAdditContentListener {
@@ -16,13 +17,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AaSdkSessionListener, AaS
             .withAppId(key: "7D58810X6333241C")
             .inEnv(env: AdAdapted.Env.DEV)
             .enableKeywordIntercept(value: true)
+            .enablePayloads(value: true)
             .setSdkSessionListener(listener: self)
             .setSdkEventListener(listener: self)
             .setSdkAdditContentListener(listener: self)
             .start()
         
-        //AdAdaptedListManager.itemAddedToList(item: "stuff", list: "list")
-        
+        DispatchQueue.main.async { //ONLY used for payload testing, the SDK will never request this.
+            ATTrackingManager.requestTrackingAuthorization() { status in
+                switch status {
+                case .authorized:
+                    // User granted permission
+                    print("Tracking authorized.")
+                case .denied:
+                    // User denied permission
+                    print("Tracking denied.")
+                case .restricted:
+                    // Tracking is restricted
+                    print("Tracking restricted.")
+                case .notDetermined:
+                    // Tracking permission not determined yet
+                    print("Tracking permission not determined.")
+                @unknown default:
+                    break
+                }
+            }
+        }
         
         return true
     }
@@ -38,21 +58,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AaSdkSessionListener, AaS
     
     func onContentAvailable(content: AddToListContent) {
         let listItems = content.getItems()
+        let itemTitle = listItems.first?.title ?? ""
         content.acknowledge()
         print(String(format: "%d item(s) added to Default List", listItems.count))
+        showToast(message: itemTitle + " received from payload.", duration: 2.0)
     }
-
+    
     // MARK: UISceneSession Lifecycle
-
+    
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
-
+    
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+    
+    private func showToast(message: String, duration: TimeInterval = 2.0) {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let topViewController = windowScene.windows.first?.rootViewController else {
+            return
+        }
+        
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        topViewController.present(alert, animated: true)
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + duration) {
+            alert.dismiss(animated: true)
+        }
     }
 }
