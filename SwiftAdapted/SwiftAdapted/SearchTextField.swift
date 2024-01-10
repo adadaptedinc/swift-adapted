@@ -501,7 +501,7 @@ import adadapted_swift_sdk
                 interceptItem.attributedTitle!.setAttributes(highlightAttributes, range: (interceptItem.title as NSString).range(of: suggestionName, options: comparisonOptions))
                 interceptItem.isSponsored = true
                 filteredResults.append(interceptItem)
-                suggestion.wasPresented()
+                suggestion.wasPresented() //TODO fix this busted double display
             }
         }
     }

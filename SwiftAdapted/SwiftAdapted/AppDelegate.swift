@@ -61,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AaSdkSessionListener, AaS
         let itemTitle = listItems.first?.title ?? ""
         content.acknowledge()
         print(String(format: "%d item(s) added to Default List", listItems.count))
-        showToast(message: itemTitle + " received from payload.", duration: 2.0)
+        Toast.showToast(message: itemTitle + " received from payload.", duration: 2.0)
     }
     
     // MARK: UISceneSession Lifecycle
@@ -76,19 +76,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AaSdkSessionListener, AaS
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
-    
-    private func showToast(message: String, duration: TimeInterval = 2.0) {
-        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-              let topViewController = windowScene.windows.first?.rootViewController else {
-            return
-        }
-        
-        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        topViewController.present(alert, animated: true)
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + duration) {
-            alert.dismiss(animated: true)
-        }
     }
 }

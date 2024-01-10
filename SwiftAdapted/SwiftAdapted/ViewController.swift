@@ -40,6 +40,10 @@ class ViewController:
         searchTextField.filterStrings(getListItems())
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        aaZoneView.onStop(listener: self)
+    }
+    
     var listData = [String]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
