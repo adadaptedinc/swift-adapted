@@ -491,7 +491,7 @@ import adadapted_swift_sdk
     }
     
     fileprivate func getInterceptSuggestions(suggestion: String) {
-        let results = KeywordInterceptMatcher.instance.match(constraint: suggestion)
+        let results = KeywordInterceptMatcher.instance.match(constraint: suggestion) //hits multiple times due to poor search control
         print("Keyword intercept suggestion available")
         if !results.isEmpty {
             for var suggestion in results {
@@ -500,8 +500,10 @@ import adadapted_swift_sdk
                 interceptItem.attributedTitle = NSMutableAttributedString(string: suggestionName)
                 interceptItem.attributedTitle!.setAttributes(highlightAttributes, range: (interceptItem.title as NSString).range(of: suggestionName, options: comparisonOptions))
                 interceptItem.isSponsored = true
-                filteredResults.append(interceptItem)
-                suggestion.wasPresented() //TODO fix this busted double display
+                if !filteredResults.contains(where: {$0.title == interceptItem.title}) {
+                    filteredResults.append(interceptItem)
+                    suggestion.wasPresented() //hits multiple times due to poor search control
+                }
             }
         }
     }
