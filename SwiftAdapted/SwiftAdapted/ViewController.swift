@@ -25,6 +25,14 @@ class ViewController:
         searchTextField.filterStrings(getListItems())
     }
     
+    @IBAction func setRecipeContext(_ sender: UISwitch) {
+        if sender.isEnabled {
+            aaZoneView.setAdZoneContextId(contextId: "alex_recipe_id_1")
+        } else {
+            aaZoneView.clearAdZoneContext()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchTextField.delegate = self
