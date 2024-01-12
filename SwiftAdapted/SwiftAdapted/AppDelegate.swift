@@ -64,16 +64,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AaSdkSessionListener, AaS
         Toast.showToast(message: itemTitle + " received from payload.", duration: 2.0)
     }
     
-    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
-        if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
-            if let url = userActivity.webpageURL {
-                //todo call universal link parser
-                return true
-            }
-        }
-        return false
-    }
-    
     // MARK: UISceneSession Lifecycle
     
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
