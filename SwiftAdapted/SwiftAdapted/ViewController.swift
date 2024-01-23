@@ -21,14 +21,18 @@ class ViewController:
     @IBOutlet weak var addItemButton: UIButton!
     @IBOutlet weak var listTableView: UITableView!
     
+    var aaZoneViewTwo: AaZoneView = AaZoneView()
+    
     @IBAction func editingChanged(_ sender: Any) {
         searchTextField.filterStrings(getListItems())
     }
     
     @IBAction func setRecipeContext(_ sender: UISwitch) {
-        if sender.isEnabled {
-            aaZoneView.setAdZoneContextId(contextId: "alex_recipe_id_1")
+        if sender.isOn {
+            aaZoneView.setAdZoneContextId(contextId: "1201")
+            aaZoneViewTwo.setAdZoneContextId(contextId: "1201")
         } else {
+            //aaZoneView.removeAdZoneContext() test remove a single zone
             aaZoneView.clearAdZoneContext()
         }
     }
@@ -41,6 +45,8 @@ class ViewController:
         
         aaZoneView.initialize(zoneId: "102110")
         aaZoneView.onStart(listener: self, contentListener: self)
+        
+        aaZoneViewTwo.initialize(zoneId: "123456")
         
         listData = ["Eggs", "Bread"]
         searchTextField.font = UIFont.systemFont(ofSize: 15)
