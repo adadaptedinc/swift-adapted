@@ -29,8 +29,8 @@ class ViewController:
     
     @IBAction func setRecipeContext(_ sender: UISwitch) {
         if sender.isOn {
-            aaZoneView.setAdZoneContextId(contextId: "1201")
-            aaZoneViewTwo.setAdZoneContextId(contextId: "1201")
+            aaZoneView.setAdZoneContextId(contextId: "organic")
+            aaZoneViewTwo.setAdZoneContextId(contextId: "organic")
         } else {
             //aaZoneView.removeAdZoneContext() test remove a single zone
             aaZoneView.clearAdZoneContext()
@@ -46,7 +46,7 @@ class ViewController:
         aaZoneView.initialize(zoneId: "102110")
         aaZoneView.onStart(listener: self, contentListener: self)
         
-        aaZoneViewTwo.initialize(zoneId: "123456")
+        aaZoneViewTwo.initialize(zoneId: "110002")
         
         listData = ["Eggs", "Bread"]
         searchTextField.font = UIFont.systemFont(ofSize: 15)
