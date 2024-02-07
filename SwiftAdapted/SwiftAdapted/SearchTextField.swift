@@ -491,7 +491,7 @@ import adadapted_swift_sdk
     }
     
     fileprivate func getInterceptSuggestions(suggestion: String) {
-        let results = KeywordInterceptMatcher.instance.match(constraint: suggestion) //hits multiple times due to poor search control
+        let results = KeywordInterceptMatcher.getInstance().match(constraint: suggestion) //hits multiple times due to poor search control
         print("Keyword intercept suggestion available")
         if !results.isEmpty {
             for var suggestion in results {
@@ -618,7 +618,7 @@ extension SearchTextField: UITableViewDelegate, UITableViewDataSource {
         if itemSelectionHandler == nil {
             let selectedItem = filteredResults[(indexPath as NSIndexPath).row]
             if selectedItem.isSponsored {
-                KeywordInterceptMatcher.instance.suggestionWasSelected(suggestionName: selectedItem.title)
+                KeywordInterceptMatcher.getInstance().suggestionWasSelected(suggestionName: selectedItem.title)
             }
             self.text = selectedItem.title
         } else {
