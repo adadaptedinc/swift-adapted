@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/adadaptedinc/adadapted-swift-sdk",
       "state" : {
-        "revision" : "f22847414b317c4eb6607b9e09e9fd92d6894569",
-        "version" : "0.0.1"
+        "revision" : "b09c46046d345740820e097bbfbf2b425ed8091c",
+        "version" : "0.0.5"
       }
     },
     {
