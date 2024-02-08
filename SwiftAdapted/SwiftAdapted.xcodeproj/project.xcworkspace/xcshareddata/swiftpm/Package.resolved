@@ -1,12 +1,21 @@
 {
   "pins" : [
     {
+      "identity" : "adadapted-swift-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/adadaptedinc/adadapted-swift-sdk",
+      "state" : {
+        "revision" : "f22847414b317c4eb6607b9e09e9fd92d6894569",
+        "version" : "0.0.1"
+      }
+    },
+    {
       "identity" : "swift-log",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-log.git",
       "state" : {
-        "revision" : "532d8b529501fb73a2455b179e0bbb6d49b652ed",
-        "version" : "1.5.3"
+        "revision" : "e97a6fcb1ab07462881ac165fdbb37f067e205d5",
+        "version" : "1.5.4"
       }
     }
   ],

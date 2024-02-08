@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,9 +14,9 @@
 		F4A96F622B068EDD00F9F8E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A96F602B068EDD00F9F8E8 /* Main.storyboard */; };
 		F4A96F642B068EDF00F9F8E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4A96F632B068EDF00F9F8E8 /* Assets.xcassets */; };
 		F4A96F672B068EDF00F9F8E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A96F652B068EDF00F9F8E8 /* LaunchScreen.storyboard */; };
-		F4A96F782B06B30300F9F8E8 /* adadapted-swift-sdk in Frameworks */ = {isa = PBXBuildFile; productRef = F4A96F772B06B30300F9F8E8 /* adadapted-swift-sdk */; };
 		F4AAFE2C2B1F80FC00A9E8FC /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AAFE2B2B1F80FC00A9E8FC /* SearchTextField.swift */; };
 		F4AAFE2E2B1F96E900A9E8FC /* DefaultListItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4AAFE2D2B1F96E900A9E8FC /* DefaultListItems.plist */; };
+		F4B5C8572B754E32009080C3 /* adadapted-swift-sdk in Frameworks */ = {isa = PBXBuildFile; productRef = F4B5C8562B754E32009080C3 /* adadapted-swift-sdk */; };
 		F4B6C4132B4F19C7000DBB8B /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6C4122B4F19C7000DBB8B /* LaunchViewController.swift */; };
 		F4B6C4152B4F1C43000DBB8B /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6C4142B4F1C43000DBB8B /* Toast.swift */; };
 		F4CB38132B4C6A0900478CC9 /* OffScreenAdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CB38122B4C6A0900478CC9 /* OffScreenAdController.swift */; };
@@ -45,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4A96F782B06B30300F9F8E8 /* adadapted-swift-sdk in Frameworks */,
+				F4B5C8572B754E32009080C3 /* adadapted-swift-sdk in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,7 +106,7 @@
 			);
 			name = SwiftAdapted;
 			packageProductDependencies = (
-				F4A96F772B06B30300F9F8E8 /* adadapted-swift-sdk */,
+				F4B5C8562B754E32009080C3 /* adadapted-swift-sdk */,
 			);
 			productName = SwiftAdapted;
 			productReference = F4A96F572B068EDD00F9F8E8 /* SwiftAdapted.app */;
@@ -137,7 +137,7 @@
 			);
 			mainGroup = F4A96F4E2B068EDD00F9F8E8;
 			packageReferences = (
-				F4A96F702B06AC8900F9F8E8 /* XCLocalSwiftPackageReference "../../adadapted-swift-sdk" */,
+				F4B5C8552B754E32009080C3 /* XCRemoteSwiftPackageReference "adadapted-swift-sdk" */,
 			);
 			productRefGroup = F4A96F582B068EDD00F9F8E8 /* Products */;
 			projectDirPath = "";
@@ -400,16 +400,21 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		F4A96F702B06AC8900F9F8E8 /* XCLocalSwiftPackageReference "../../adadapted-swift-sdk" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = "../../adadapted-swift-sdk";
+/* Begin XCRemoteSwiftPackageReference section */
+		F4B5C8552B754E32009080C3 /* XCRemoteSwiftPackageReference "adadapted-swift-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adadaptedinc/adadapted-swift-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.1;
+			};
 		};
-/* End XCLocalSwiftPackageReference section */
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F4A96F772B06B30300F9F8E8 /* adadapted-swift-sdk */ = {
+		F4B5C8562B754E32009080C3 /* adadapted-swift-sdk */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = F4B5C8552B754E32009080C3 /* XCRemoteSwiftPackageReference "adadapted-swift-sdk" */;
 			productName = "adadapted-swift-sdk";
 		};
 /* End XCSwiftPackageProductDependency section */
