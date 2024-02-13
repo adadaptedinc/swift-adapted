@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AaSdkSessionListener, AaS
             .inEnv(env: AdAdapted.Env.DEV)
             .enableKeywordIntercept(value: true)
             .enablePayloads(value: true)
+            .enableDebugLogging()
             .setSdkSessionListener(listener: self)
             .setSdkEventListener(listener: self)
             .setSdkAdditContentListener(listener: self)
