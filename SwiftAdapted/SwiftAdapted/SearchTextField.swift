@@ -491,7 +491,7 @@ import adadapted_swift_sdk
     }
     
     fileprivate func getInterceptSuggestions(suggestion: String) {
-        let results = KeywordInterceptMatcher.getInstance().match(constraint: suggestion) //hits multiple times due to poor search control
+        let results = KeywordInterceptMatcher.getInstance().match(constraint: suggestion) //hits multiple times due to poor control
         print("Keyword intercept suggestion available")
         if !results.isEmpty {
             for var suggestion in results {
