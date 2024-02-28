@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AaSdkSessionListener, AaS
             .setSdkSessionListener(listener: self)
             .setSdkEventListener(listener: self)
             .setSdkAdditContentListener(listener: self)
+            .setCustomIdentifier(identifier: "adadapted_iphone_15")
             .start()
         
         DispatchQueue.main.async { //ONLY used for payload testing, the SDK will never request this.
