@@ -22,29 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AaSdkSessionListener, AaS
             .setSdkSessionListener(listener: self)
             .setSdkEventListener(listener: self)
             .setSdkAdditContentListener(listener: self)
-            .setCustomIdentifier(identifier: "adadapted_iphone_15")
+            //.setCustomIdentifier(identifier: "adadapted_iphone_15")
             .start()
-        
-        DispatchQueue.main.async { //ONLY used for payload testing, the SDK will never request this.
-            ATTrackingManager.requestTrackingAuthorization() { status in
-                switch status {
-                case .authorized:
-                    // User granted permission
-                    print("Tracking authorized.")
-                case .denied:
-                    // User denied permission
-                    print("Tracking denied.")
-                case .restricted:
-                    // Tracking is restricted
-                    print("Tracking restricted.")
-                case .notDetermined:
-                    // Tracking permission not determined yet
-                    print("Tracking permission not determined.")
-                @unknown default:
-                    break
-                }
-            }
-        }
         
         return true
     }
