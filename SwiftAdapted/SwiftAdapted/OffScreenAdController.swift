@@ -49,6 +49,11 @@ class OffScreenAdContoller: UIViewController, UIScrollViewDelegate, ZoneViewList
         }
         content.acknowledge()
     }
+    
+    func onNonContentAction(zoneId: String, adId: String) {
+        var checkZone = zoneId
+        var checkAd = adId
+    }
 
     func viewControllerForPresentingModalView() -> UIViewController? {
         return self
