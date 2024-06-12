@@ -97,6 +97,11 @@ class ViewController:
         content.acknowledge()
     }
     
+    func onNonContentAction(zoneId: String, adId: String) {
+        var checkZone = zoneId
+        var checkAd = adId
+    }
+    
     func onZoneHasAds(hasAds: Bool) {
         var check = hasAds
     }
