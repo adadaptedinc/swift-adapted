@@ -14,7 +14,8 @@ class OffScreenAdContoller: UIViewController, UIScrollViewDelegate, ZoneViewList
 
     @IBOutlet weak var offScreenScrollView: UIScrollView!
     @IBOutlet weak var offScreenZoneView: AaZoneView!
-
+    @IBOutlet weak var offScreenZoneViewTwo: AaZoneView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,10 +24,15 @@ class OffScreenAdContoller: UIViewController, UIScrollViewDelegate, ZoneViewList
         offScreenZoneView.initialize(zoneId: "102110")
         offScreenZoneView.setAdZoneVisibility(isViewable: false)
         offScreenZoneView.onStart(listener: self, contentListener: self)
+        
+        offScreenZoneViewTwo.initialize(zoneId: "102110")
+        offScreenZoneViewTwo.setAdZoneVisibility(isViewable: false)
+        offScreenZoneViewTwo.onStart(listener: self, contentListener: self)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         offScreenZoneView.onStop(listener: self)
+        offScreenZoneViewTwo.onStop(listener: self)
     }
     
     func onZoneHasAds(hasAds: Bool) {
@@ -68,6 +74,14 @@ class OffScreenAdContoller: UIViewController, UIScrollViewDelegate, ZoneViewList
                 offScreenZoneView.setAdZoneVisibility(isViewable: true)
             } else {
                 offScreenZoneView.setAdZoneVisibility(isViewable: false)
+            }
+            
+            let viewFrameTwo = scrollView.convert(offScreenZoneView.bounds, from: offScreenZoneViewTwo)
+            if viewFrameTwo.intersects(scrollView.bounds) {
+                // Set ad zone visibility here for accurate tracking of off screen ads
+                offScreenZoneViewTwo.setAdZoneVisibility(isViewable: true)
+            } else {
+                offScreenZoneViewTwo.setAdZoneVisibility(isViewable: false)
             }
         }
     }
