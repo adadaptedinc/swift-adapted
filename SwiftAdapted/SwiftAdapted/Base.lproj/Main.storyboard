@@ -204,6 +204,12 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o3z-tN-mca">
+                                        <rect key="frame" x="99" y="292" width="194" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="qkh-Kd-L4Z" firstAttribute="width" secondItem="EGI-zr-bJ1" secondAttribute="width" id="6Wt-Vz-NfZ"/>
@@ -226,6 +232,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="keywordText" destination="o3z-tN-mca" id="gWR-nk-qpJ"/>
                         <outlet property="offScreenScrollView" destination="AV1-wG-g1H" id="er8-bX-use"/>
                         <outlet property="offScreenZoneView" destination="Wbe-s3-4Ar" id="bJO-K8-Uid"/>
                         <outlet property="offScreenZoneViewTwo" destination="jel-TR-JVB" id="S61-Qq-S9Z"/>

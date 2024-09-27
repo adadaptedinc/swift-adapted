@@ -15,6 +15,7 @@ class OffScreenAdContoller: UIViewController, UIScrollViewDelegate, ZoneViewList
     @IBOutlet weak var offScreenScrollView: UIScrollView!
     @IBOutlet weak var offScreenZoneView: AaZoneView!
     @IBOutlet weak var offScreenZoneViewTwo: AaZoneView!
+    @IBOutlet weak var keywordText: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +29,21 @@ class OffScreenAdContoller: UIViewController, UIScrollViewDelegate, ZoneViewList
         offScreenZoneViewTwo.initialize(zoneId: "102110")
         offScreenZoneViewTwo.setAdZoneVisibility(isViewable: false)
         offScreenZoneViewTwo.onStart(listener: self, contentListener: self)
+        
+        keywordText.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         offScreenZoneView.onStop(listener: self)
         offScreenZoneViewTwo.onStop(listener: self)
+    }
+    
+    //for directly testing keywords
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        if let text = textField.text {
+            let results = KeywordInterceptMatcher.getInstance().match(constraint: text)
+        }
     }
     
     func onZoneHasAds(hasAds: Bool) {
