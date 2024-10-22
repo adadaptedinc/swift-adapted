@@ -11,9 +11,9 @@ import UIKit
 
 class LaunchViewController: UIViewController {
     @IBAction func testSendListManagerReports(_ sender: Any) {
-        AdAdaptedListManager.itemAddedToList(item: "testItemAdd", list: "swift_adapted_list")
-        AdAdaptedListManager.itemCrossedOffList(item: "testItemCross", list: "swift_adapted_list")
-        AdAdaptedListManager.itemDeletedFromList(item: "testItemDelete", list: "swift_adapted_list")
+        AdAdaptedListManager.itemAddedToList(list: "swift_adapted_list", item: "testItemAdd")
+        AdAdaptedListManager.itemCrossedOffList(list: "swift_adapted_list", item: "testItemCross")
+        AdAdaptedListManager.itemDeletedFromList(list: "swift_adapted_list", item: "testItemDelete")
         
         Toast.showToast(message: "List Manager Reports Sent.")
     }
