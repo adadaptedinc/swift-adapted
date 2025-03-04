@@ -21,7 +21,7 @@ class ViewController:
     @IBOutlet weak var addItemButton: UIButton!
     @IBOutlet weak var listTableView: UITableView!
     
-    var aaZoneViewTwo: AaZoneView = AaZoneView()
+    var programmaticZoneView: AaZoneView = AaZoneView()
     
     @IBAction func editingChanged(_ sender: Any) {
         searchTextField.filterStrings(getListItems())
@@ -30,7 +30,7 @@ class ViewController:
     @IBAction func setRecipeContext(_ sender: UISwitch) {
         if sender.isOn {
             aaZoneView.setAdZoneContextId(contextId: "organic")
-            aaZoneViewTwo.setAdZoneContextId(contextId: "organic")
+            //programmaticZoneView.setAdZoneContextId(contextId: "organic")
         } else {
             //aaZoneView.removeAdZoneContext() test remove a single zone
             aaZoneView.clearAdZoneContext()
@@ -46,7 +46,10 @@ class ViewController:
         aaZoneView.initialize(zoneId: "102110")
         aaZoneView.onStart(listener: self, contentListener: self)
         
-        aaZoneViewTwo.initialize(zoneId: "110002")
+        programmaticZoneView.frame = CGRect(x: 0, y: 600, width: 0, height: 0)
+        programmaticZoneView.initialize(zoneId: "110002")
+        programmaticZoneView.onStart(listener: self)
+        view.addSubview(programmaticZoneView)
         
         listData = ["Eggs", "Bread"]
         searchTextField.font = UIFont.systemFont(ofSize: 15)
@@ -85,6 +88,8 @@ class ViewController:
         if searchTextField.text != nil && !searchTextField.text!.isEmpty {
             appendListItem(itemName: searchTextField.text!)
         }
+        //testing to set size after being started at 0,0
+        programmaticZoneView.frame = CGRect(x: 0, y: 600, width: view.bounds.width, height: 128)
     }
     
     func onContentAvailable(zoneId: String, content: AddToListContent) {

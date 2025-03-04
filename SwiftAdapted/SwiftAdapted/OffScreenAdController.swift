@@ -31,7 +31,6 @@ class OffScreenAdContoller: UIViewController, UIScrollViewDelegate, ZoneViewList
         offScreenZoneViewTwo.onStart(listener: self, contentListener: self)
         
         keywordText.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -80,6 +79,7 @@ class OffScreenAdContoller: UIViewController, UIScrollViewDelegate, ZoneViewList
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if offScreenScrollView != nil {
             let viewFrame = scrollView.convert(offScreenZoneView.bounds, from: offScreenZoneView)
+            offScreenZoneViewTwo.frame.size = CGSize(width: 357, height: 128) //testing delayed size set
             if viewFrame.intersects(scrollView.bounds) {
                 // Set ad zone visibility here for accurate tracking of off screen ads
                 offScreenZoneView.setAdZoneVisibility(isViewable: true)
