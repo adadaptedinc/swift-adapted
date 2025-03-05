@@ -43,7 +43,7 @@ class ViewController:
         listTableView.delegate = self
         listTableView.dataSource = self
         
-        aaZoneView.initialize(zoneId: "102110")
+        aaZoneView.initialize(zoneId: "102110") //102110 102176-tasty
         aaZoneView.onStart(listener: self, contentListener: self)
         
         programmaticZoneView.frame = CGRect(x: 0, y: 600, width: 0, height: 0)

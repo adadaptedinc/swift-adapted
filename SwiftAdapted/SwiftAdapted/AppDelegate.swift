@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AaSdkSessionListener, AaS
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         AdAdapted
-            .withAppId(key: "7D58810X6333241C")
+            .withAppId(key: "7D58810X6333241C") //tasty-NJAZMDBKMDY3ODMY ours-7D58810X6333241C
             .inEnv(env: AdAdapted.Env.DEV)
             .enableKeywordIntercept(value: true)
             .enablePayloads(value: true)
