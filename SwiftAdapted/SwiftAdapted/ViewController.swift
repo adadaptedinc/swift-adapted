@@ -59,6 +59,7 @@ class ViewController:
     
     override func viewDidDisappear(_ animated: Bool) {
         aaZoneView.onStop(listener: self)
+        programmaticZoneView.onStop(listener: self)
     }
     
     var listData = [String]()
