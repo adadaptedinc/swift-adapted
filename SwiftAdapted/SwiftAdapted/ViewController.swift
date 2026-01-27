@@ -21,7 +21,7 @@ class ViewController:
     @IBOutlet weak var addItemButton: UIButton!
     @IBOutlet weak var listTableView: UITableView!
     
-    var aaZoneViewTwo: AaZoneView = AaZoneView()
+    //var programmaticZoneView: AaZoneView = AaZoneView()
     
     @IBAction func editingChanged(_ sender: Any) {
         searchTextField.filterStrings(getListItems())
@@ -29,11 +29,12 @@ class ViewController:
     
     @IBAction func setRecipeContext(_ sender: UISwitch) {
         if sender.isOn {
-            aaZoneView.setAdZoneContextId(contextId: "organic")
-            aaZoneViewTwo.setAdZoneContextId(contextId: "organic")
+            aaZoneView.setAdZoneContextId(contextId: "organicBad")
+            aaZoneView.setAdZoneContextId(contextId: "organic") //testing
+            //programmaticZoneView.setAdZoneContextId(contextId: "organic")
         } else {
-            //aaZoneView.removeAdZoneContext() test remove a single zone
-            aaZoneView.clearAdZoneContext()
+            aaZoneView.removeAdZoneContext()
+            //aaZoneView.clearAdZoneContext()
         }
     }
     
@@ -43,19 +44,27 @@ class ViewController:
         listTableView.delegate = self
         listTableView.dataSource = self
         
-        aaZoneView.initialize(zoneId: "102110")
+        aaZoneView.initialize(zoneId: "102110") //102110 102176-tasty
         aaZoneView.onStart(listener: self, contentListener: self)
         
-        aaZoneViewTwo.initialize(zoneId: "110002")
+//        programmaticZoneView.frame = CGRect(x: 0, y: 600, width: 0, height: 0)
+//        programmaticZoneView.initialize(zoneId: "102110")
+//        programmaticZoneView.onStart(listener: self)
+        //view.addSubview(programmaticZoneView)
         
         listData = ["Eggs", "Bread"]
         searchTextField.font = UIFont.systemFont(ofSize: 15)
         searchTextField.minCharactersNumberToStartFiltering = 3
         searchTextField.filterStrings(getListItems())
+        
+        //UL testing
+//        AdAdaptedLinkHandler.parseUniversalLink("https://ul.adadapted.com/swiftadapted?data=eyJwYXlsb2FkX2lkIjoiMUJDMjBGNDQtMzE1My00QURDLUFCNEEtQzlERUQzNUE0MkQ4IiwicGF5bG9hZF9tZXNzYWdlIjoiRmlyc3QgU2FtcGxlIFByb2R1Y3QiLCJwYXlsb2FkX2ltYWdlIjoiMjAxOTAxMTRfMjIxMTIzX3Rlc3RfaW1hZ2VfMi5wbmciLCJjYW1wYWlnbl9pZCI6IjI1NyIsImFwcF9pZCI6Imdyb2NlcnlsaXN0dGVzdGFwcCIsImV4cGlyZV9zZWNvbmRzIjo2MDQ4MDAsImRldGFpbGVkX2xpc3RfaXRlbXMiOlt7InRyYWNraW5nX2lkIjoiQ0RFQTNGODUtRTc4Ri00NzlGLUFFQkEtMjdBQjY1MEZBMjI2IiwicHJvZHVjdF90aXRsZSI6IkZpcnN0IFNhbXBsZSBQcm9kdWN0IiwicHJvZHVjdF9icmFuZCI6IlNhbXBsZSBCcmFuZCIsInByb2R1Y3RfY2F0ZWdvcnkiOiIiLCJwcm9kdWN0X2JhcmNvZGUiOiIwMTIzNCIsInByb2R1Y3Rfc2t1IjoiIiwicHJvZHVjdF9kaXNjb3VudCI6IiIsInByb2R1Y3RfaW1hZ2UiOiJodHRwczpcL1wvaW1hZ2VzLmFkYWRhcHRlZC5jb21cLzIwMTkwMTE0XzIyMTEyM190ZXN0X2ltYWdlXzIucG5nIn0seyJ0cmFja2luZ19pZCI6IjIxMEI5RUNBLTk4MjQtNDdBMi1BMDQ2LTg0NjRGMkEyOTdENiIsInByb2R1Y3RfdGl0bGUiOiJTZWNvbmQgU2FtcGxlIFByb2R1Y3QiLCJwcm9kdWN0X2JyYW5kIjoiU2FtcGxlIEJyYW5kIiwicHJvZHVjdF9jYXRlZ29yeSI6IiIsInByb2R1Y3RfYmFyY29kZSI6IjQzMjEwIiwicHJvZHVjdF9za3UiOiIiLCJwcm9kdWN0X2Rpc2NvdW50IjoiIiwicHJvZHVjdF9pbWFnZSI6Imh0dHBzOlwvXC9pbWFnZXMuYWRhZGFwdGVkLmNvbVwvMjAxOTAxMTRfMjIxMTQ2X3Rlc3RfaW1hZ2VfMi5wbmcifV19")
+
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         aaZoneView.onStop(listener: self)
+        //programmaticZoneView.onStop(listener: self)
     }
     
     var listData = [String]()
@@ -85,6 +94,8 @@ class ViewController:
         if searchTextField.text != nil && !searchTextField.text!.isEmpty {
             appendListItem(itemName: searchTextField.text!)
         }
+        //testing to set size after being started at 0,0
+        //programmaticZoneView.frame = CGRect(x: 0, y: 600, width: view.bounds.width, height: 128)
     }
     
     func onContentAvailable(zoneId: String, content: AddToListContent) {
