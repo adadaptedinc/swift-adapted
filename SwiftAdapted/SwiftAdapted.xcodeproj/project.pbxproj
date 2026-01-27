@@ -23,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F49AF94C2DB5791400661CF5 /* SwiftAdaptedDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftAdaptedDebug.entitlements; sourceTree = "<group>"; };
 		F4A9677F2B16860900E80835 /* aa-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aa-logo.png"; sourceTree = "<group>"; };
 		F4A96F572B068EDD00F9F8E8 /* SwiftAdapted.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftAdapted.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A96F5A2B068EDD00F9F8E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +72,7 @@
 		F4A96F592B068EDD00F9F8E8 /* SwiftAdapted */ = {
 			isa = PBXGroup;
 			children = (
+				F49AF94C2DB5791400661CF5 /* SwiftAdaptedDebug.entitlements */,
 				F4CC1FDB2B508F94001C2973 /* SwiftAdapted.entitlements */,
 				F4A96F5A2B068EDD00F9F8E8 /* AppDelegate.swift */,
 				F4AAFE2B2B1F80FC00A9E8FC /* SearchTextField.swift */,
@@ -324,10 +326,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = SwiftAdapted/SwiftAdapted.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SwiftAdapted/SwiftAdaptedDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5YAPZP9T4N;
+				DEVELOPMENT_TEAM = 39UVY9UGNC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftAdapted/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -356,7 +358,7 @@
 				CODE_SIGN_ENTITLEMENTS = SwiftAdapted/SwiftAdapted.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5YAPZP9T4N;
+				DEVELOPMENT_TEAM = 39UVY9UGNC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftAdapted/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

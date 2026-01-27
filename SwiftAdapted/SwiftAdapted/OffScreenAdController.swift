@@ -22,11 +22,11 @@ class OffScreenAdContoller: UIViewController, UIScrollViewDelegate, ZoneViewList
 
         offScreenScrollView.delegate = self
         
-        offScreenZoneView.initialize(zoneId: "102110")
+        offScreenZoneView.initialize(zoneId: "102110") //102176
         offScreenZoneView.setAdZoneVisibility(isViewable: false)
         offScreenZoneView.onStart(listener: self, contentListener: self)
         
-        offScreenZoneViewTwo.initialize(zoneId: "110002")
+        offScreenZoneViewTwo.initialize(zoneId: "102110")
         offScreenZoneViewTwo.setAdZoneVisibility(isViewable: false)
         offScreenZoneViewTwo.onStart(listener: self, contentListener: self)
         

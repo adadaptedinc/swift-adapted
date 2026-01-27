@@ -10,7 +10,7 @@ import adadapted_swift_sdk
 import AppTrackingTransparency
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, AaSdkSessionListener, AaSdkEventListener, AaSdkAdditContentListener {
+class AppDelegate: UIResponder, UIApplicationDelegate, AaSdkEventListener, AaSdkAdditContentListener {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         AdAdapted
@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AaSdkSessionListener, AaS
             .enableKeywordIntercept(value: true)
             .enablePayloads(value: true)
             .enableDebugLogging()
-            .setSdkSessionListener(listener: self)
             .setSdkEventListener(listener: self)
             .setSdkAdditContentListener(listener: self)
             //.setCustomIdentifier(identifier: "adadapted_iphone_15")
